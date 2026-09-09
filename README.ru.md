@@ -10,7 +10,7 @@
 [![Skills](https://img.shields.io/badge/skills-8-6f5cff)](#каталог-skills)
 [![Лицензия: MIT](https://img.shields.io/badge/license-MIT-22a06b.svg)](LICENSE)
 
-[English](README.md) · [Русский](README.ru.md) · [Как внести вклад](CONTRIBUTING.md) · [Безопасность](SECURITY.md)
+[English](README.md) · [Русский](README.ru.md) · [Как внести вклад](CONTRIBUTING.md) · [Правила сообщества](CODE_OF_CONDUCT.md) · [Безопасность](SECURITY.md)
 
 </div>
 

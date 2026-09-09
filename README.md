@@ -11,7 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-22a06b.svg)](LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/Alpha-Oi/ai-skills?color=1f6feb)](https://github.com/Alpha-Oi/ai-skills/commits/main)
 
-[English](README.md) · [Русский](README.ru.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+[English](README.md) · [Русский](README.ru.md) · [Contributing](CONTRIBUTING.md) · [Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md)
 
 </div>
 
@@ -107,6 +107,7 @@ ai-skills/
 │   ├── ten-dimensional-review/
 │   └── 10d-quality-vector/
 ├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
 ├── SECURITY.md
 ├── LICENSE
 ├── README.md

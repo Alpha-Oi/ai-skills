@@ -2,7 +2,7 @@
 
 Thank you for helping improve the collection. Contributions should make an agent's
 decisions measurably clearer, safer, or more reliable without adding process for its
-own sake.
+own sake. Participation is governed by the [Community Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Propose a change
 
