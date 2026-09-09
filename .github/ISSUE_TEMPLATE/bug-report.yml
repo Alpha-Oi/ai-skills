@@ -1,0 +1,42 @@
+name: Skill problem
+description: Report incorrect, unsafe, unclear, or ineffective skill behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Affected skill
+      placeholder: skills/example-skill
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Reproduction request
+      description: Provide a minimal user request without secrets or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Host and model
+      description: Include relevant product, model, and version if known.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations
+      description: List checks performed and what remains unverified.

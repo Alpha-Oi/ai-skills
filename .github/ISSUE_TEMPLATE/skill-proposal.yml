@@ -1,0 +1,47 @@
+name: Skill proposal
+description: Propose a new skill or a substantial capability for an existing one
+title: "[Skill]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for proposing a focused addition to AI Skills.
+  - type: input
+    id: scenario
+    attributes:
+      label: User scenario
+      description: Who asks the agent to do what, and what observable result should they receive?
+      placeholder: When a user asks..., the agent should...
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Current gap
+      description: What decision or failure is not handled adequately today?
+    validations:
+      required: true
+  - type: textarea
+    id: guidance
+    attributes:
+      label: Proposed guidance
+      description: What non-obvious instructions would change the agent's behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Acceptance scenarios
+      description: Give realistic requests and the outcomes that would demonstrate value.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This proposal does not require secrets or private data.
+          required: true
+        - label: I have identified any external material and its license.
+          required: true

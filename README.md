@@ -1,81 +1,148 @@
-# AI Skills
+<div align="center">
 
-A public collection of reusable skills for AI coding and general-purpose agents.
+# ◈ AI Skills
 
-Each skill is stored in its own directory and has a `SKILL.md` entry point with YAML frontmatter. The collection is designed to remain simple to browse, install, review, and extend.
+### Reusable control systems for AI agents
+
+**Metacognition · Biology-inspired architecture · 10D engineering**
+
+[![Validate skills](https://github.com/Alpha-Oi/ai-skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/Alpha-Oi/ai-skills/actions/workflows/validate-skills.yml)
+[![Skills](https://img.shields.io/badge/skills-8-6f5cff)](#skill-catalog)
+[![License: MIT](https://img.shields.io/badge/license-MIT-22a06b.svg)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/Alpha-Oi/ai-skills?color=1f6feb)](https://github.com/Alpha-Oi/ai-skills/commits/main)
+
+[English](README.md) · [Русский](README.ru.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+
+</div>
+
+---
+
+AI Skills is a curated collection of portable instruction packages for AI coding
+agents and general-purpose assistants. Each skill turns a difficult decision pattern
+into a focused, reviewable workflow with explicit boundaries and verification.
+
+The collection explores three related ideas:
+
+- **Metacognitive control** — check goals, evidence, uncertainty, and completion.
+- **Biology-inspired architecture** — translate biological mechanisms into testable
+  engineering patterns while preserving the limits of the analogy.
+- **Ten-dimensional engineering** — evaluate decisions through interacting quality
+  dimensions instead of optimizing one property in isolation.
+
+## Quick start
+
+Choose a skill from the [catalog](#skill-catalog), review its `SKILL.md`, and copy
+the complete skill directory into the skills location supported by your agent.
+
+```text
+skills/<skill-name>/
+├── SKILL.md
+└── references/       # present only when the skill needs supporting material
+```
+
+Then ask the agent to use the skill by name, or let the host discover it from the
+frontmatter description when automatic selection is supported.
+
+> [!IMPORTANT]
+> A skill provides instructions and decision support. It does not grant permission
+> to modify files, access credentials, call external services, publish changes, or
+> perform destructive actions.
+
+## Skill catalog
+
+### Metacognitive control
+
+| Skill | Use it for |
+| --- | --- |
+| [Metacognition](skills/metacognition/SKILL.md) | Checking task understanding, assumptions, evidence, contradictions, progress, and verification. |
+| [Metacognitive Supervisor](skills/metacognitive-supervisor/SKILL.md) | Supervising long-running or multi-component work with freshness checks, failure memory, decision records, escalation, and self-audit. |
+
+### Biology-inspired architecture
+
+| Skill | Engineering pattern | Biological inspiration |
+| --- | --- | --- |
+| [Aquaporin Flow](skills/aquaporin-flow/SKILL.md) | Selective data boundaries and verified artifact delivery | Aquaporins and intracellular transport |
+| [Complementary Integrity](skills/complementary-integrity/SKILL.md) | Redundancy, source authority, and bounded recovery | DNA complementarity and repair |
+| [Contextual Structures](skills/contextual-structures/SKILL.md) | Relationship-dependent meaning and coherent updates | Glycan diversity and the glycocalyx |
+| [Asymmetric State Flow](skills/asymmetric-state-flow/SKILL.md) | Direction-specific transitions and controlled redistribution | Lipid movement across membrane leaflets |
+
+Each biological skill includes `references/biology.md` with sources and limits.
+Biological inspiration is a design lens, not evidence of software correctness,
+security, performance, or intentional design in nature.
+
+### Ten-dimensional engineering
+
+| Skill | Use it for |
+| --- | --- |
+| [Ten-Dimensional Review](skills/ten-dimensional-review/SKILL.md) | Broad system decisions across purpose, context, information, structure, behavior, time, resources, failure, trust, and evolution. |
+| [10D Quality Vector](skills/10d-quality-vector/SKILL.md) | Code changes and reviews across correctness, reliability, maintainability, testability, security, performance, compatibility, observability, simplicity, and architectural fit. |
+
+The two 10D skills are complementary: the first explores a system decision space;
+the second applies a concrete quality contract to engineering work.
+
+## Design principles
+
+- **Clear routing:** every description says what the skill does and when to use it.
+- **Progressive disclosure:** essential instructions stay in `SKILL.md`; conditional
+  detail belongs in `references/`, `scripts/`, or `assets/` only when needed.
+- **Evidence over confidence:** proposed checks and observed results remain distinct.
+- **Bounded authority:** a workflow never expands the user's permission by itself.
+- **Useful restraint:** the smallest adequate skill and intervention should win.
+- **Portable structure:** every skill remains self-contained and easy to review.
 
 ## Repository structure
 
 ```text
 ai-skills/
-├── README.md
+├── .github/                  # contribution templates and validation workflow
+├── scripts/
+│   └── validate_skills.py
+├── skills/
+│   ├── metacognition/
+│   ├── metacognitive-supervisor/
+│   ├── aquaporin-flow/
+│   ├── complementary-integrity/
+│   ├── contextual-structures/
+│   ├── asymmetric-state-flow/
+│   ├── ten-dimensional-review/
+│   └── 10d-quality-vector/
+├── CONTRIBUTING.md
+├── SECURITY.md
 ├── LICENSE
-└── skills/
-    ├── metacognition/
-    ├── metacognitive-supervisor/
-    ├── aquaporin-flow/
-    ├── complementary-integrity/
-    ├── contextual-structures/
-    ├── asymmetric-state-flow/
-    ├── ten-dimensional-review/
-    └── 10d-quality-vector/
+├── README.md
+└── README.ru.md
 ```
 
-Add future skills under `skills/<skill-name>/`. Use a lowercase, hyphen-separated directory name and keep the main instructions in `SKILL.md`. Add `scripts/`, `references/`, or `assets/` inside a skill only when that skill actually needs them.
+## Add a skill
 
-## Included skills
+Create `skills/<skill-name>/SKILL.md` with lowercase hyphenated naming and concise
+YAML frontmatter:
 
-### Metacognition v1.0
+```yaml
+---
+name: my-skill
+description: Explain what the skill does and when an agent should use it.
+---
+```
 
-A focused quality-control loop for an AI agent. It checks the goal, assumptions, uncertainty, evidence, contradictions, strategy, progress, and verification without exposing private chain-of-thought.
+Keep the entry point focused, add resources only when they change decisions, and run:
 
-Path: [`skills/metacognition/SKILL.md`](skills/metacognition/SKILL.md)
+```bash
+python scripts/validate_skills.py
+```
 
-### Metacognitive Supervisor
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the acceptance criteria and pull request
+process.
 
-An extended supervisory layer for agents and skills. It adds meta-memory, skill-quality and freshness checks, model compatibility, cross-agent critique, repeated-failure control, information-gain gating, decision journals, metacognitive debt, escalation, and self-audit.
+## Project status
 
-Path: [`skills/metacognitive-supervisor/SKILL.md`](skills/metacognitive-supervisor/SKILL.md)
-
-## Биологические принципы в архитектуре систем
-
-Skills, созданные на основе биологических принципов и адаптированные для
-проектирования программных систем и AI-агентов. Каждый skill переводит конкретный
-механизм в инженерные приёмы, обозначая границы аналогии.
-
-| Skill | Назначение | Биологическая основа |
-| --- | --- | --- |
-| [Aquaporin Flow](skills/aquaporin-flow/SKILL.md) | Избирательный пропуск данных и проверяемая доставка | Аквапорины и внутриклеточный транспорт |
-| [Complementary Integrity](skills/complementary-integrity/SKILL.md) | Целостность, избыточность и восстановление по достоверному источнику | Комплементарность ДНК и репарация |
-| [Contextual Structures](skills/contextual-structures/SKILL.md) | Контекстные связи, разветвлённые структуры и согласованные обновления | Разнообразие гликанов и гликокаликс |
-| [Asymmetric State Flow](skills/asymmetric-state-flow/SKILL.md) | Разные правила переходов и управляемое перераспределение | Перенос липидов между слоями мембраны |
-
-Each skill is independently usable and contains `SKILL.md`. Biological skills also
-include `references/biology.md` with sources and limits of the analogy. Biological
-inspiration is not evidence of software correctness, security, or performance.
-These are initial versions: format validation does not establish behavioral efficacy
-across models or host products.
-
-## Десятимерные инженерные модели
-
-Два дополняющих друг друга skill для многокритериального анализа:
-
-| Skill | Назначение |
-| --- | --- |
-| [Ten-Dimensional Review](skills/ten-dimensional-review/SKILL.md) | Исследует решение по десяти осям: цель, контекст, информация, структура, поведение, время, ресурсы, отказы, доверие и развитие. |
-| [10D Quality Vector](skills/10d-quality-vector/SKILL.md) | Проверяет код и архитектурные решения по исходным десяти критериям пользователя: correctness, reliability, maintainability, testability, security, performance, compatibility, observability, simplicity и architectural fit. |
-
-`Ten-Dimensional Review` подходит для широких системных решений и взаимодействия
-ограничений. `10D Quality Vector` предназначен для инженерных изменений, code review,
-выбора масштаба исправления и доказательной оценки вариантов.
-
-## Using a skill
-
-Copy the selected skill directory into the skills location supported by your agent environment, or reference its `SKILL.md` from your own skill loader. Exact installation and discovery behavior depends on the host product.
-
-Review every skill before use. A skill provides instructions and decision support; it does not grant permission to modify files, call external services, use credentials, or perform destructive actions.
+This is an evolving collection of initial skill versions. Structural validation
+checks packaging and local references; it does not establish behavioral effectiveness
+across models, prompts, repositories, or host products. Realistic forward evaluations
+are welcome.
 
 ## License
 
-The collection is distributed under the [MIT License](LICENSE).
-External sources linked in biological references retain their respective rights.
+Code and original documentation in this repository are available under the
+[MIT License](LICENSE). External sources linked from biological references retain
+their respective rights.
