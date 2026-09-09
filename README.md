@@ -16,7 +16,9 @@ ai-skills/
     ├── aquaporin-flow/
     ├── complementary-integrity/
     ├── contextual-structures/
-    └── asymmetric-state-flow/
+    ├── asymmetric-state-flow/
+    ├── ten-dimensional-review/
+    └── 10d-quality-vector/
 ```
 
 Add future skills under `skills/<skill-name>/`. Use a lowercase, hyphen-separated directory name and keep the main instructions in `SKILL.md`. Add `scripts/`, `references/`, or `assets/` inside a skill only when that skill actually needs them.
@@ -53,6 +55,19 @@ include `references/biology.md` with sources and limits of the analogy. Biologic
 inspiration is not evidence of software correctness, security, or performance.
 These are initial versions: format validation does not establish behavioral efficacy
 across models or host products.
+
+## Десятимерные инженерные модели
+
+Два дополняющих друг друга skill для многокритериального анализа:
+
+| Skill | Назначение |
+| --- | --- |
+| [Ten-Dimensional Review](skills/ten-dimensional-review/SKILL.md) | Исследует решение по десяти осям: цель, контекст, информация, структура, поведение, время, ресурсы, отказы, доверие и развитие. |
+| [10D Quality Vector](skills/10d-quality-vector/SKILL.md) | Проверяет код и архитектурные решения по исходным десяти критериям пользователя: correctness, reliability, maintainability, testability, security, performance, compatibility, observability, simplicity и architectural fit. |
+
+`Ten-Dimensional Review` подходит для широких системных решений и взаимодействия
+ограничений. `10D Quality Vector` предназначен для инженерных изменений, code review,
+выбора масштаба исправления и доказательной оценки вариантов.
 
 ## Using a skill
 
